@@ -128,10 +128,8 @@ public class OldCarMove : MonoBehaviour
             StarsManager.starNumber[1] = 1;
             other.gameObject.SetActive(false);            
             starAudioSource.Play();
-            //starAdioSource.PlayOneShot(starCollectSound, 1F);
-            //ShakeringNumber = 1;
-            //CameraFollow.shakeNumber = 1;
-            //Debug.Log("starrrrrr");
+            
+            //Debug.Log("star 1 collected");
         }
         if (other.CompareTag("Star2"))
         {

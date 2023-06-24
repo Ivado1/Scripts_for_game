@@ -57,11 +57,9 @@ public class Finish : MonoBehaviour
         var go = Instantiate(moneyPrefabEffect, starFinishImages.transform.position + new Vector3(-740f, -50f, 0f), Quaternion.identity, GameObject.Find("Canvas").transform);
         go.GetComponent<Text>().text = "+" + moneyLevel + "$".ToString();
         Destroy(go, 1f);
-
-        //if (col.gameObject.tag=="Player")
-        if (col.gameObject.CompareTag("Player"))   //more optimyze
+        
+        if (col.gameObject.CompareTag("Player"))  
         {
-
             sondFinish.Play();
             Icons.SetActive(false);
             if (SceneManager.GetActiveScene().buildIndex <= 15)

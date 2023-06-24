@@ -12,8 +12,7 @@ public class WheelTrail : MonoBehaviour
     {
         trailRenderer = GetComponent<TrailRenderer>();
         groundCheckDistance = 0.48f;
-        //groundCheckDistance = GetComponent<WheelCollider>().radius+0.05f;
-        //groundCheckDistance = GetComponent<WheelCollider>().radius;        
+
         if (SceneManager.GetActiveScene().buildIndex >= 1 && SceneManager.GetActiveScene().buildIndex <= 15)
         {
             whichFloor = LayerMask.GetMask("Grass");
@@ -36,15 +35,11 @@ public class WheelTrail : MonoBehaviour
     }
     void Update()
     {
-        
         Ray ray = new Ray(PlaceRayBegin.position, -transform.up * groundCheckDistance);
-        //Debug.DrawRay(PlaceRayBegin.position, -transform.up * groundCheckDistance);
-
         RaycastHit hit;
+
         if (Physics.Raycast(PlaceRayBegin.position, -transform.up, out hit, groundCheckDistance, whichFloor))
         {
-            //Debug.DrawRay(transform.position, -transform.up * groundCheckDistance, Color.magenta);
-            //Debug.Log(groundCheckDistance);
             trailRenderer.emitting = true;
             //Debug.Log("Touch");
         }

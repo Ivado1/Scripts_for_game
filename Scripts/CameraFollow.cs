@@ -1,5 +1,5 @@
 using UnityEngine;
-
+//
 public class CameraFollow : MonoBehaviour
 {
     public Transform Target;
@@ -8,7 +8,7 @@ public class CameraFollow : MonoBehaviour
     public Vector3 eulerRotation;
     public float damper;
 
-    //private float shakeMagnitude = 0.05f, shakeTime = 0.5f;
+    //private float shakeMagnitude = 0.05f, shakeTime = 0.5f; //Stronger shake
     private float shakeMagnitude = 0.02f, shakeTime = 0.2f;
     public Camera mainCamera;
 

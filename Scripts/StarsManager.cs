@@ -19,7 +19,7 @@ public class StarsManager : MonoBehaviour
         else
         {
             LevelSelection.levelStars[SceneIndex] = 0;
-            //Debug.Log("First Time Play NoCollected stars");
+            //Debug.Log("First Time Play, Haven`t Collected stars");
         }
 
         for (int i = 0; i < starsGameObject.Length; i++)        //stars  [Number scene 1, number Star 1] = 0;
