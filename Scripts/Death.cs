@@ -7,7 +7,7 @@ public class Death : MonoBehaviour
         if (other.CompareTag("Player"))
         {   
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-            //Debug.Log("Water");
+            //Debug.Log("Player touch water");
         }
     }
     public void RestartButton()

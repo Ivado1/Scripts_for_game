@@ -1,6 +1,8 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 
+// Show in UI information about car.
+
 public class CarDisplay : MonoBehaviour
 {
     [Header("Description")]
@@ -21,7 +23,9 @@ public class CarDisplay : MonoBehaviour
     [Header("Car Model")]
     [SerializeField] private GameObject carModel;
 
+    //Gradient from red to green(Low to High) when high parameter is better
     public Gradient gradient;
+    //Invers gradient from green to re (High to Low) when low parameter is better
     public Gradient gradientInvers;
 
     private float speedBuyUpgradeNumber;
@@ -30,10 +34,9 @@ public class CarDisplay : MonoBehaviour
     private float massBuyUpgradeNumber;
 
     private void Awake()
-    {
+    {           
         //carModel = GameObject.Find("CarContainer");
     }
-
     public void EnterSpeedEffectButton()
     {
         speedBuyEffect.enabled = true;

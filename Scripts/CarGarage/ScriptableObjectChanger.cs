@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
-
+//Manage all game cars on level(Upgrade, Car Prefabs) with "Car Display()";
 public class ScriptableObjectChanger : MonoBehaviour
 {
     public static int money;
@@ -35,8 +35,7 @@ public class ScriptableObjectChanger : MonoBehaviour
     public AudioSource UpgradeSound;
 
     private void Awake()
-    {
-        
+    {        
         if (PlayButtonRight != null)
         {
             if (PlayerPrefs.HasKey("firstTimeEnter")) PlayButtonRight.SetActive(true);
@@ -77,7 +76,7 @@ public class ScriptableObjectChanger : MonoBehaviour
         {
             boughtCar[currentCarIndex] = PlayerPrefs.GetInt("carGarage" + currentCarIndex);
 
-            if(BuyButton != null)// uslovie dly oshibok na drugih urovnyah
+            if(BuyButton != null)// For avoid mistake on other levels
             {
                 costUpgrade = costCar / 10;
                 UpgradePrice1.text = (costUpgrade + 20).ToString();
@@ -96,11 +95,7 @@ public class ScriptableObjectChanger : MonoBehaviour
                 for (int i = 1; i <= 4; i++) 
                 {
                     if (PlayerPrefs.HasKey("Upgrade" + currentCarIndex + i ))
-                    {
-                        //PlayerPrefs.SetInt("LevelStar"+ SceneIndex + i, stars[SceneIndex, i]);
-
-                        //PlayerPrefs.SetInt("Upgrade" + currentCarIndex, upgradeCar[currentCarIndex, 3] = 1); 
-                        //stars[SceneIndex, i] = PlayerPrefs.GetInt("LevelStar" + SceneIndex + i);
+                    {                        
                         upgradeCar[currentCarIndex, i] = PlayerPrefs.GetInt("Upgrade" + currentCarIndex + i);
                         Debug.Log( "Upgrade № "+ i + " on car № " + currentCarIndex);
                     }
@@ -154,7 +149,7 @@ public class ScriptableObjectChanger : MonoBehaviour
             Destroy(go, 1f);
             SpendMoney.Play();
 
-            PlayerPrefs.SetInt("firstTimeEnter", 1); //Proverka na 1 pokupku
+            PlayerPrefs.SetInt("firstTimeEnter", 1); //To check 1 bought in game
             PlayerPrefs.SetInt("Money", money -= costCar);
             PlayerPrefs.SetInt("carGarage" + currentCarIndex, boughtCar[currentCarIndex] = 1);
             PlayerPrefs.SetInt("carChoose", currentCarIndex);
@@ -178,7 +173,7 @@ public class ScriptableObjectChanger : MonoBehaviour
         }
         else
         {
-            // Zvukk kva kva// Not enough money
+            // PourSound.Play(); //kva kva Not enough money
         }
     }
     public void BuyUpgradeSpeed()

@@ -7,7 +7,6 @@ public class MoveButtonsMobile : MonoBehaviour
     void Start()
     {
         carScriptsMovement = GameObject.Find("CarContainer").transform.GetChild(0).gameObject;
-        //carRightMovement = GameObject.Find("Canvas").transform.GetChild(0).transform.Find("Right").gameObject;
     }
     public void LeftButton()
     {

@@ -1,6 +1,8 @@
 using UnityEngine;
 using System.Collections;
 
+//When car on moving platforms
+
 public class PlatformAttach : MonoBehaviour
 {
     public GameObject Player;
@@ -22,7 +24,6 @@ public class PlatformAttach : MonoBehaviour
     {
         _Transform = gameObject.transform;
         _Transform.Translate(distance * Time.deltaTime, 0f, 0f);
-        //_Transform.Translate(-3f * Time.deltaTime, visota * Time.deltaTime, 0f);
     }
     IEnumerator MoveUp()
     {
@@ -48,7 +49,6 @@ public class PlatformAttach : MonoBehaviour
         if (other.gameObject == Player)
         {
             PlayerCont.transform.parent = null;
-            //Player.transform.parent = null;
         }
     }    
 }

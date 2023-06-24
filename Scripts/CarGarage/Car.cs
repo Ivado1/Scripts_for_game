@@ -1,5 +1,8 @@
 ﻿using UnityEngine;
-//Right mouse button -> Create (for template car with standart parameters)
+
+//Here you can create the template for car with standart parameters
+//Right mouse button -> Create ->Scriptable Objects -> Car
+
 [CreateAssetMenu(fileName = "New Car", menuName = "Scriptable Objects/Car")]
 public class Car : ScriptableObject
 {

@@ -1,5 +1,5 @@
 using UnityEngine;
-
+//When player leave active page in browser stop game and sound;
 public class FocusSoundController : MonoBehaviour
 {
     static public int tvBreak;

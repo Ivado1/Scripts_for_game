@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class Star : MonoBehaviour
 {
-    public GameObject StarEffect;
+    public GameObject StarEffect; 
 
     private void OnTriggerEnter(Collider other) 
     {
