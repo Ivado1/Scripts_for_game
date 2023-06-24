@@ -1,6 +1,6 @@
--👋 Hi, I’m Ivan Dolinin
--📫 How to reach me ivadogames@mail.ru
--📩Telegram https://t.me/ivado1
+- 👋 Hi, I’m Ivan Dolinin
+- 📫 How to reach me ivadogames@mail.ru
+- 📩Telegram https://t.me/ivado1
 
 In my game I used basic scripts for casual games such as : 
 1) "Level system": Only the first level of the game is unlocked for a player at the beginning. The second level is locked and it will open when a player finishes and so on. 
