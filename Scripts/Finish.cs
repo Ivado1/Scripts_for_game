@@ -19,13 +19,13 @@ public class Finish : MonoBehaviour
     
     DateTime StartAdTime;
     private float timeForNextAd; //time to next ad in sec
-    private int remainingDurationAd; //timePassed
+    private int remainingDurationAd; //time passed in sec
 
     void Start()
     {
         InterstitialAd.S.LoadAd();
-        if (SceneManager.GetActiveScene().buildIndex >= 1 && SceneManager.GetActiveScene().buildIndex <= 7) moneyLevel = 75;
-        if (SceneManager.GetActiveScene().buildIndex >= 8 && SceneManager.GetActiveScene().buildIndex <= 15) moneyLevel = 120;
+        if (SceneManager.GetActiveScene().buildIndex >= 1 && SceneManager.GetActiveScene().buildIndex <= 7) moneyLevel = 75; //Small reward for the first half easy levels  
+        if (SceneManager.GetActiveScene().buildIndex >= 8 && SceneManager.GetActiveScene().buildIndex <= 15) moneyLevel = 120; //Big reward for the second half hard levels
         if (SceneManager.GetActiveScene().buildIndex >= 16 && SceneManager.GetActiveScene().buildIndex <= 23) moneyLevel = 75;
         if (SceneManager.GetActiveScene().buildIndex >= 24 && SceneManager.GetActiveScene().buildIndex <= 30) moneyLevel = 120;
         if (SceneManager.GetActiveScene().buildIndex >= 31 && SceneManager.GetActiveScene().buildIndex <= 37) moneyLevel = 75;
