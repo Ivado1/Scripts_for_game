@@ -25,7 +25,7 @@ public class CameraFollow : MonoBehaviour
         if (Target == null)
             return;
         transform.position = Vector3.Lerp(transform.position, Target.position + offset, damper * Time.deltaTime);//Camera follow the car 
-        
+        //transform.eulerAngles = eulerRotation; // On if need to add updating rotation  
         if (shakeNumber == 1)
         {
             ShakeCamera();
@@ -35,7 +35,6 @@ public class CameraFollow : MonoBehaviour
 
     public void ShakeCamera()
     {
-        InvokeRepeating("StartCameraShaking", 0f, 0.005f);
         InvokeRepeating("StartCameraShaking", 0f, 0.005f);
         Invoke("StopCameraShaking", shakeTime);
     }
