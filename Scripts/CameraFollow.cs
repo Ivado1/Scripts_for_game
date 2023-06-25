@@ -4,9 +4,9 @@ public class CameraFollow : MonoBehaviour
 {
     public Transform Target;
 
-    public Vector3 offset;
-    public Vector3 eulerRotation;
-    public float damper;
+    public Vector3 offset; // Move camera (X,Y,Z)(Up,Down,Left,Right) put needs parameters
+    public Vector3 eulerRotation; // Rotate camera
+    public float damper; // Follow effect(0-slow, high- faster)
 
     //private float shakeMagnitude = 0.05f, shakeTime = 0.5f; //Stronger shake
     private float shakeMagnitude = 0.02f, shakeTime = 0.2f;
@@ -16,7 +16,7 @@ public class CameraFollow : MonoBehaviour
 
     void Start()
     {
-        Target = GameObject.Find("CarContainer").transform.GetChild(0); /// working camera follow the car 
+        Target = GameObject.Find("CarContainer").transform.GetChild(0); //Camera find player in scene(Hierarchy)  
         transform.eulerAngles = eulerRotation;
         ShakeCamera();
     }
@@ -24,7 +24,7 @@ public class CameraFollow : MonoBehaviour
     {
         if (Target == null)
             return;
-        transform.position = Vector3.Lerp(transform.position, Target.position + offset, damper * Time.deltaTime);
+        transform.position = Vector3.Lerp(transform.position, Target.position + offset, damper * Time.deltaTime);//Camera follow the car 
         
         if (shakeNumber == 1)
         {
