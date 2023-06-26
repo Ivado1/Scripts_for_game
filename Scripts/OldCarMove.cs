@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using System.Runtime.InteropServices;
-
+//Player`s car 
 public class OldCarMove : MonoBehaviour
 {
     public Transform centerOfMass;
@@ -39,14 +39,13 @@ public class OldCarMove : MonoBehaviour
     void Start()
     {
         AudioListener.pause = false;
-        starAudioSource.volume = 0.3f;
-        
+        Time.timeScale = 1f;
+
         //Debug.Log(motorTorque + " HP");
         //Debug.Log(motorBrake + " Brake");
         //Debug.Log(maxSteer + " Angel");
         //Debug.Log(massCar + " KG");
-
-        Time.timeScale = 1f;
+        
         int SceneIndex = SceneManager.GetActiveScene().buildIndex;
         _rigidbody = GetComponent<Rigidbody>();
         _rigidbody.mass = massCar;
@@ -114,10 +113,7 @@ public class OldCarMove : MonoBehaviour
         wheelBackRight.position = pos;
         wheelBackRight.rotation = rot * Quaternion.Euler(0, 180, 0);
         
-        if (ShakeringNumber==1)
-        {
-            ShakeringNumber = 0;
-        }
+        if (ShakeringNumber==1) ShakeringNumber = 0; // For fast shake camera(crash effect)
     }
     private void OnTriggerEnter(Collider other)
     {
@@ -145,6 +141,5 @@ public class OldCarMove : MonoBehaviour
             other.gameObject.SetActive(false);
             starAudioSource.Play();
         }
-    }
-    
+    }    
 }
