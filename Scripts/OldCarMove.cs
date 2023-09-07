@@ -64,7 +64,7 @@ public class OldCarMove : MonoBehaviour
         if (PCPlayFrom)
         {
             wheelColliderBackLeft.motorTorque = wheelColliderBackRight.motorTorque = wheelColliderFrontLeft.motorTorque = wheelColliderFrontRight.motorTorque = Input.GetAxis("Vertical") * motorTorque; 
-            //PC MOVE ---------  // wheelColliderBackRight.motorTorque = Input.GetAxis("Vertical") * motorTorque; //R 2wd pc 
+            //PC MOVE ---------  // wheelColliderBackRight.motorTorque = Input.GetAxis("Vertical") * motorTorque; R 2wd pc 
             wheelColliderFrontRight.steerAngle = wheelColliderFrontLeft.steerAngle = Input.GetAxis("Horizontal") * maxSteer;
         }
         motorCurrentTorque = _rigidbody.velocity.magnitude/15;
