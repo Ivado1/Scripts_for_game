@@ -37,6 +37,7 @@ public class CarDisplay : MonoBehaviour
     {           
         //carModel = GameObject.Find("CarContainer");
     }
+    //(Event Trigger) When pointer enter on button "Buy Speed Upgrade" it will show improve     
     public void EnterSpeedEffectButton()
     {
         speedBuyEffect.enabled = true;
@@ -76,9 +77,8 @@ public class CarDisplay : MonoBehaviour
         carName.text = _newCar.carName;
         carDescription.text = _newCar.carDescription;
         carPrice.text = _newCar.carPrice.ToString();   //" $"
-
-        //if (gradient != null)
-        if (speedBuyEffect != null)
+        
+        if (speedBuyEffect != null) // For avoid mistake on other levels
         {
             speedBuyEffect.enabled = false;
             speedBuyUpgradeNumber = 1.15f * _newCar.Torque;
