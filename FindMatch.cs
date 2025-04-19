@@ -18,7 +18,6 @@ public class FindMatches : MonoBehaviour {
     
     [SerializeField] private string[] levelTargetTagName; // Предмет который нужно собирать на уровне
     [SerializeField] private int[] levelTargetAmount; // Необходимое количество для победы
-
     [SerializeField] public int turnsAmount; // Необходимое количество ходов на этот уровень
 
     public GameObject loseMenu;
@@ -36,7 +35,7 @@ public class FindMatches : MonoBehaviour {
 
     public AudioSource specialColorSound, specialBombSound, specialArrowSound;
 
-    // Use this for initialization
+    // Для инциализации
     void Start()
     {
         specialBombSound.volume = 0.6f;
